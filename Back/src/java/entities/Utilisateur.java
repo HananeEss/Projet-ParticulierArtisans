@@ -15,6 +15,15 @@ public class Utilisateur {
         this.adresse = adresse;
     }
 
+    public Utilisateur() {
+        this.id = id;
+        this.nom = nom;
+        this.prenom = prenom;
+        this.email = email;
+        this.motDePasse = motDePasse;
+        this.adresse = adresse;
+    }
+
     // Getters et Setters
     public String getNom() {
         return nom;

@@ -3,6 +3,10 @@ public class Particulier extends Utilisateur {
         super(id, nom, prenom, email, motDePasse, adresse);
     }
 
+    public Particulier() {
+        //super(id, nom, prenom, email, motDePasse, adresse);
+    }
+
     // Getters et Setters
     // Méthodes supplémentaires
 }
