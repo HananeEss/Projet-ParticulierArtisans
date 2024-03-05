@@ -2,14 +2,16 @@ public class Utilisateur {
     private int id;
     private String nom;
     private String prenom;
+    private String telPerso;
     private String email;
     private String motDePasse;
     private Adresse adresse;
 
-    public Utilisateur(int id, String nom, String prenom, String email, String motDePasse, Adresse adresse) {
+    public Utilisateur(int id, String nom, String prenom, String telPerso, String email, String motDePasse, Adresse adresse) {
         this.id = id;
         this.nom = nom;
         this.prenom = prenom;
+        this.telPerso = telPerso;
         this.email = email;
         this.motDePasse = motDePasse;
         this.adresse = adresse;
@@ -19,6 +21,7 @@ public class Utilisateur {
         this.id = id;
         this.nom = nom;
         this.prenom = prenom;
+        this.telPerso =telPerso;
         this.email = email;
         this.motDePasse = motDePasse;
         this.adresse = adresse;

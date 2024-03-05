@@ -4,13 +4,20 @@
 public class ServiceUtilisateur {
     public static void main (String [] args) {
 
-        //je cree un utilisateur Particulier:
-        Utilisateur U1;
-        U1 = new Particulier();
+        String nom, prenom, telPerso,
 
-        System.out.println("utilisateur particulier : "+U1);
+        Scanner sc;
+        sc = new Scanner(System.in);
+
+        //je cree un utilisateur Particulier:
+        Utilisateur UP;
+        UP = new Particulier();
+
+        System.out.println("utilisateur particulier : " + UP);
 
         //je veux qu'il s'inscrit:
+        System.out.println("Votre nom : ");
+
 
     }
 }
