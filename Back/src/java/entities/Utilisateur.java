@@ -69,4 +69,14 @@ public class Utilisateur {
     }
 
     // Méthodes supplémentaires
+
+
+    @Override
+    public String toString() {
+        return "particulier {" +
+                "nom='" + nom + '\'' +
+                ", prenom='" + prenom + '\'' +
+                ", email='" + email + '\''  +
+                '}';
+    }
 }
