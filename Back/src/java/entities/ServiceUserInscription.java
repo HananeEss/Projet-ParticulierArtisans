@@ -17,111 +17,123 @@ public class ServiceUserInscription {
         */
 
         System.out.println("Inscription : ");
-        System.out.println("Si vous voulez s'inscrire en tant que particulier tapez '1', si en tant qu'artisan tapez '2' : ");
+        System.out.println("1 : S'inscrire en tant que Particulier");
+        System.out.println("2 : S'inscrire en tant que Artisan");
+        System.out.println("Faites votre chhoix : ");
         int choix = sc.nextInt();
 
         System.out.println("votre choix est : "+choix);
 
         switch(choix) {
             case 1:
-                System.out.println("\nInscription Particulier :");
-                //lire les entrées d'inscription pour user particulier :
-
-                System.out.print("\nNom : ");
-                String nomParticulier = sc.next();
-                System.out.print("Prénom : ");
-                String prenomParticulier = sc.next();
-                System.out.print("Numéro de téléphone : ");
-                String telPersoParticulier = sc.next();
-                System.out.println("\nAdresse : ");
-                System.out.print("Rue : ");
-                String rueParticulier = sc.next();
-                System.out.print("Code Postale : ");
-                String codePostaleParticulier = sc.next();
-                System.out.print("Ville : ");
-                String villeParticulier = sc.next();
-
-                //Données d'identification :
-                System.out.print("\nEmail : ");
-                String emailParticulier = sc.next();
-                System.out.print("Mot de passe : ");
-                String motDePasseParticulier = sc.next();
-                //int id = 1;
-
-                Adresse adresseParticulier = new Adresse(rueParticulier, codePostaleParticulier, villeParticulier);
-                Utilisateur particulier = new Particulier(1, nomParticulier, prenomParticulier, telPersoParticulier, emailParticulier, motDePasseParticulier, adresseParticulier);
-                System.out.println(particulier.toString());
-
-                //valider les données d'inscription et enregistrer le user dans la base de données:
-                if(validerDonneesInscription(particulier)) {
-                    enregistrerUtilisateur(particulier);
-                    System.out.println("Inscription réussie !");
-                } 
-                else {
-                    System.out.println("Erreur : Données d'inscription invalides !");
-                }
-
+                creerCompteParticulier();
                 break;
             case 2:
-
-                System.out.println("\nInscription Artisan :");
-                //lire les entrées d'inscription pour user artisan :
-
-                System.out.print("\nNom : ");
-                String nomArtisan = sc.next();
-                System.out.print("Prénom : ");
-                String prenomArtisan = sc.next();
-                System.out.print("Numéro de téléphone personnel : ");
-                String telPersoArtisan = sc.next();
-
-                //Données sur le métier de l'artisan : 
-                System.out.print("\nMétier : ");
-                String nomMetier = sc.next();
-
-                //Données sur l'entreprise :
-                System.out.print("Nom d'entreprise : ");
-                String nomEntreprise = sc.next();
-                System.out.print("Numéro SIRET de l'entreprise : ");
-                String numSiret = sc.next();
-                System.out.print("Numéro de téléphone professionnel : ");
-                String telProfessionnel = sc.next();
-
-                System.out.println("\nAdresse : ");
-                System.out.print("Rue : ");
-                String rueArtisan = sc.next();
-                System.out.print("Code Postale : ");
-                String codePostaleArtisan = sc.next();
-                System.out.print("Ville : ");
-                String villeArtisan = sc.next();
-
-                //Données d'identification :
-                System.out.print("\nEmail : ");
-                String emailArtisan = sc.next();
-                System.out.print("Mot de passe : ");
-                String motDePasseArtisan = sc.next();
-
-                //classe Metier et Adresse avec leurs attributs :
-                Metier metier = new Metier(1, nomMetier);
-                Adresse adresseArtisan = new Adresse(rueArtisan, codePostaleArtisan, villeArtisan);
-
-                Utilisateur artisan = new Artisan(1, nomArtisan, prenomArtisan, telPersoArtisan, emailArtisan, motDePasseArtisan, adresseArtisan, metier, nomEntreprise, telProfessionnel, adresseArtisan, "diplôme", "formation", numSiret);
-                System.out.println(artisan.toString());
-
-                //valider les données d'inscription et enregistrer le user dans la base de données:
-                if(validerDonneesInscription(artisan)) {
-                    enregistrerUtilisateur(artisan);
-                    System.out.println("Inscription réussie !");
-                } 
-                else {
-                    System.out.println("Erreur : Données d'inscription invalides !");
-                }
-
+                creerCompteArtisan();
                 break;
-
             default:
-                System.out.println("Choix non trouvé !");
+            System.out.println("Choix non trouvé !");
         }
 
+    }
+
+    public static void creerCompteParticulier() {
+        Scanner sc;
+        sc = new Scanner(System.in);
+
+        System.out.println("\nInscription Particulier :");
+        //lire les entrées d'inscription pour user particulier :
+
+        System.out.print("\nNom : ");
+        String nomParticulier = sc.next();
+        System.out.print("Prénom : ");
+        String prenomParticulier = sc.next();
+        System.out.print("Numéro de téléphone : ");
+        String telPersoParticulier = sc.next();
+        System.out.println("\nAdresse : ");
+        System.out.print("Rue : ");
+        String rueParticulier = sc.next();
+        System.out.print("Code Postale : ");
+        String codePostaleParticulier = sc.next();
+        System.out.print("Ville : ");
+        String villeParticulier = sc.next();
+
+        //Données d'identification :
+        System.out.print("\nEmail : ");
+        String emailParticulier = sc.next();
+        System.out.print("Mot de passe : ");
+        String motDePasseParticulier = sc.next();
+        //int id = 1;
+
+        Adresse adresseParticulier = new Adresse(rueParticulier, codePostaleParticulier, villeParticulier);
+        Utilisateur particulier = new Particulier(1, nomParticulier, prenomParticulier, telPersoParticulier, emailParticulier, motDePasseParticulier, adresseParticulier);
+        System.out.println(particulier.toString());
+
+        //valider les données d'inscription et enregistrer le user dans la base de données:
+        if(validerDonneesInscription(particulier)) {
+            enregistrerUtilisateur(particulier);
+            System.out.println("Inscription réussie !");
+        } 
+        else {
+            System.out.println("Erreur : Données d'inscription invalides !");
+        }       
+    }
+
+    public static void creerCompteArtisan() {
+        Scanner sc;
+        sc = new Scanner(System.in);
+
+        System.out.println("\nInscription Artisan :");
+        //lire les entrées d'inscription pour user artisan :
+
+        System.out.print("\nNom : ");
+        String nomArtisan = sc.next();
+        System.out.print("Prénom : ");
+        String prenomArtisan = sc.next();
+        System.out.print("Numéro de téléphone personnel : ");
+        String telPersoArtisan = sc.next();
+
+        //Données sur le métier de l'artisan : 
+        System.out.print("\nMétier : ");
+        String nomMetier = sc.next();
+
+        //Données sur l'entreprise :
+        System.out.print("Nom d'entreprise : ");
+        String nomEntreprise = sc.next();
+        System.out.print("Numéro SIRET de l'entreprise : ");
+        String numSiret = sc.next();
+        System.out.print("Numéro de téléphone professionnel : ");
+        String telProfessionnel = sc.next();
+
+        System.out.println("\nAdresse : ");
+        System.out.print("Rue : ");
+        String rueArtisan = sc.next();
+        System.out.print("Code Postale : ");
+        String codePostaleArtisan = sc.next();
+        System.out.print("Ville : ");
+        String villeArtisan = sc.next();
+
+        //Données d'identification :
+        System.out.print("\nEmail : ");
+        String emailArtisan = sc.next();
+        System.out.print("Mot de passe : ");
+        String motDePasseArtisan = sc.next();
+
+        //classe Metier et Adresse avec leurs attributs :
+        Metier metier = new Metier(1, nomMetier);
+        Adresse adresseArtisan = new Adresse(rueArtisan, codePostaleArtisan, villeArtisan);
+
+        Utilisateur artisan = new Artisan(1, nomArtisan, prenomArtisan, telPersoArtisan, emailArtisan, motDePasseArtisan, adresseArtisan, metier, nomEntreprise, telProfessionnel, adresseArtisan, "diplôme", "formation", numSiret);
+        System.out.println(artisan.toString());
+
+        //valider les données d'inscription et enregistrer le user dans la base de données:
+        if(validerDonneesInscription(artisan)) {
+            enregistrerUtilisateur(artisan);
+            System.out.println("Inscription réussie !");
+        } 
+        else {
+            System.out.println("Erreur : Données d'inscription invalides !");
+        }
     }
 
     private static boolean validerDonneesInscription(Utilisateur utilisateur) {
