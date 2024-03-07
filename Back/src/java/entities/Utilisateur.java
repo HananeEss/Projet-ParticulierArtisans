@@ -73,7 +73,7 @@ public class Utilisateur {
 
     @Override
     public String toString() {
-        return "particulier {" +
+        return "utilisateur {" +
                 "nom='" + nom + '\'' +
                 ", prenom='" + prenom + '\'' +
                 ", email='" + email + '\''  +

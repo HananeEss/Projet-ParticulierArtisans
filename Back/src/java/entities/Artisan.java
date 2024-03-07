@@ -1,20 +1,20 @@
 public class Artisan extends Utilisateur {
     private Metier metier;
 	private String nomEntreprise;
-	private String numProfessionnel;
+	private String telProfessionnel;
 	private Adresse adresseEntreprise;
 	private String diplome;
 	private String formation;
 	private String numSiret;
 
     public Artisan(int id, String nom, String prenom, String telPerso, String email, String motDePasse, Adresse adresse, 
-                    Metier metier, String nomEntreprise, String numProfessionnel, Adresse adresseEntreprise, String diplome, 
+                    Metier metier, String nomEntreprise, String telProfessionnel, Adresse adresseEntreprise, String diplome, 
                     String formation, String numSiret) {
                         
         super(id, nom, prenom, telPerso, email, motDePasse, adresse);
         this.metier = metier;
 		this.nomEntreprise = nomEntreprise;
-		this.numProfessionnel = numProfessionnel;
+		this.telProfessionnel = telProfessionnel;
 		this.adresseEntreprise = adresseEntreprise;
 		this.diplome = diplome;
 		this.formation = formation;
@@ -31,12 +31,12 @@ public class Artisan extends Utilisateur {
         this.nomEntreprise = nomEntreprise;
     }
 
-    public String getNumProfessionnel() {
-        return numProfessionnel;
+    public String getTelProfessionnel() {
+        return telProfessionnel;
     }
 
-    public void setNumProfessionnel(String numProfessionnel) {
-        this.numProfessionnel = numProfessionnel;
+    public void setTelProfessionnel(String telProfessionnel) {
+        this.telProfessionnel = telProfessionnel;
     }
 
     public Adresse getAdresseEntreprise() {
